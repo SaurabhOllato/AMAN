@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smooth Scroll Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- tsParticles via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body class="smooth-scroll">
+  <!-- Common background that will move with parallax -->
+  <!-- <div class="common-bg" id="commonBg"></div> -->
+  <div class="common-bg" id="commonBg"></div>
+
+  <!-- Navbar -->
+  <header class="fixed w-full z-50 bg-transparent text-white">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="text-2xl font-bold">Aman</div>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <div class="md:hidden">
+        <button id="menuToggle" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Items -->
+      <div id="navMenu" class="hidden md:flex space-x-6 text-lg font-medium transition duration-300">
+        <a href="#home" class="hover:text-gray-300">Home</a>
+        <a href="#about" class="hover:text-gray-300">About</a>
+        <a href="#projects" class="hover:text-gray-300">Projects</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="#home" class="block py-2 hover:text-gray-300">Home</a>
+      <a href="#about" class="block py-2 hover:text-gray-300">About</a>
+      <a href="#projects" class="block py-2 hover:text-gray-300">Projects</a>
+      <a href="#contact" class="block py-2 hover:text-gray-300">Contact</a>
+    </div>
+  </header>
+
+  <!-- Required wrapper for Locomotive -->
+
+  <div id="main" data-scroll-container class="content-wrapper">
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center text-white relative" data-scroll-section>
+      <div class="bg-overlay"></div>
+      <div class="relative z-10 text-center px-6" data-scroll data-scroll-speed="2">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">Hi, I'm Aman</h1>
+        <p class="text-xl md:text-2xl">Frontend Developer & Designer</p>
+        <div class="mt-8" data-scroll data-scroll-speed="1">
+          <button
+            class="px-6 py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300">
+            View My Work
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+
+<section id="about" class="min-h-screen flex items-center justify-center px-6 py-20" data-scroll-section>
+        <div class="bg-overlay"></div>
+
+  <div class="max-w-4xl mx-auto w-full glass-morphism p-10 rounded-xl shadow-lg overflow-hidden  relative">
+    <!-- Glass morphism background noise effect -->
+    <div class="absolute inset-0 bg-noise opacity-5 pointer-events-none"></div>
+    
+    <!-- Animated content -->
+    <div class="about-content relative p-10 z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-white underline decoration-pink-500 mb-6 transform translate-y-10 ">
+        About Me
+      </h2>
+      <p class="text-lg md:text-xl leading-relaxed text-white transform translate-y-10  text-white/90">
+        Hi! I'm Aman. I'm passionate about building beautiful, interactive, and performant websites. I love working with modern web technologies and continuously strive to improve my skills while crafting elegant digital experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="toc" class="min-h-screen flex items-center justify-center text-white px-6 py-20" data-scroll-section>
+  <div class="bg-overlay"></div>
+
+  <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <!-- Left: Table of Contents (2/3 width) -->
+    <div class="bg-white/5 backdrop-blur-md p-10 rounded-2xl shadow-lg lg:col-span-2">
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 relative inline-block">
+        <span class="relative z-10">Table of Contents</span>
+        <span class="absolute bottom-0 left-0 w-full h-1.5 bg-blue-500/70 rounded-full -z-0 transform origin-left scale-x-90 hover:scale-x-100 transition-transform duration-500"></span>
+      </h2>
+      <ul class="space-y-6 text-lg md:text-xl">
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🎬</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Intro Edits</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Engaging openers for YouTube or Reels</span>
+          </div>
+        </li>
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">✈️</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Travel Vlogs</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Dynamic and cinematic journey edits</span>
+          </div>
+        </li>
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🎥</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Cinematic Videos</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Color grading, storytelling, transitions</span>
+          </div>
+        </li>
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🔁</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Before & After</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Client transformation showcases</span>
+          </div>
+        </li>
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">📱</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Social Media Snippets</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Edits for Reels, TikToks, Shorts</span>
+          </div>
+        </li>
+        <li class="toc-item group flex items-start">
+          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🏷️</span>
+          <div>
+            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Client Projects</strong>
+            <span class="block text-white/70 group-hover:text-white/90">Branded content, promotional edits</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Editing Apps (1/3 width) -->
+    <div class="editing-apps flex flex-col justify-center gap-6 p-8 bg-white/5 backdrop-blur-md rounded-2xl shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4 text-center">Software I Use</h3>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fab fa-adobe text-2xl text-pink-400 mr-3"></i> 
+        <span class="text-lg">Adobe Premiere Pro</span>
+      </div>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fas fa-magic text-2xl text-purple-400 mr-3"></i> 
+        <span class="text-lg">After Effects</span>
+      </div>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fas fa-cut text-2xl text-green-400 mr-3"></i> 
+        <span class="text-lg">CapCut</span>
+      </div>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fas fa-video text-2xl text-blue-400 mr-3"></i> 
+        <span class="text-lg">VN Video Editor</span>
+      </div>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fas fa-film text-2xl text-yellow-400 mr-3"></i> 
+        <span class="text-lg">DaVinci Resolve</span>
+      </div>
+      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
+        <i class="fas fa-clapperboard text-2xl text-red-400 mr-3"></i> 
+        <span class="text-lg">Final Cut Pro</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-20 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16">
+      My <span class="text-blue-400">Video Portfolio</span>
+    </h2>
+    
+    <!-- Swiper Container -->
+    <div class="swiper-container-coverflow relative">
+      <div class="swiper swiper-coverflow">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide group">
+            <div class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+              <div class="aspect-w-16 aspect-h-9">
+                <video class="w-full h-full object-cover" poster="https://via.placeholder.com/800x450" muted loop>
+                  <source src="your-video-1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent  group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Cinematic Travel Film</h3>
+                  <p class="text-blue-300">4K • Color Graded • Stabilized</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide group">
+            <div class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+              <div class="aspect-w-16 aspect-h-9">
+                <video class="w-full h-full object-cover" poster="https://via.placeholder.com/800x450" muted loop>
+                  <source src="your-video-2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent  group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Product Commercial</h3>
+                  <p class="text-blue-300">Smooth Transitions • Sound Design</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more slides as needed -->
+        </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-prev text-blue-400 hover:text-white transition-colors"></div>
+      <div class="swiper-button-next text-blue-400 hover:text-white transition-colors"></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
