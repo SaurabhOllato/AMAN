@@ -138,3 +138,116 @@ section {
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+  .h1{
+    opacity: 0;;
+  }
+
+   .video-text .char {
+    transform: translateY(20px);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .typing {
+  display: inline-block;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 1.5s steps(10) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  to {
+    width: 4.5ch; /* Length of "Aman" */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+  #name {
+    /* font-family: 'Great Vibes', cursive; */
+    color: white;
+    text-shadow:
+      0 0 5px rgba(255,255,255,0.6),
+      0 0 10px rgba(255,255,255,0.4);
+  }
+#appScroller {
+  display: flex;
+  width: calc(100vw * 5); /* adjust 5 to total boxes */
+}
+
+ .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(1  50px, 1fr));
+            gap: 10px;
+            margin-top: 60px;
+        }
+        
+        .service-item {
+            /* background: rgba(255, 255, 255, 0.1); */
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+.dot {
+    color: #9bff00; /* neon green */
+    font-size: 1.2rem;
+  }
+
+  .contact-link {
+    transition: all 0.3s ease;
+    display: inline-block;
+    will-change: transform;
+  }
+  
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  
+  section.is-in-view::before {
+    opacity: 1;
+  }
+
+  .custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff4081;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+    box-shadow: 0 0 10px #ff4081;
+
+}
+
+.hover-target:hover ~ .custom-cursor {
+  background-color: #ff4081;
+}
+html {
+  scroll-behavior: smooth;
+}

@@ -1,255 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smooth Scroll Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AMAN||pORTFOLIO</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- tsParticles via CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-</head>
+    <!-- tsParticles via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  </head>
 
-<body class="smooth-scroll">
-  <!-- Common background that will move with parallax -->
-  <!-- <div class="common-bg" id="commonBg"></div> -->
-  <div class="common-bg" id="commonBg"></div>
+  <body class="smooth-scroll" data-scroll-container>
+     <div class="custom-cursor"></div>
+    <div class="common-bg" id="commonBg"></div>
 
-  <!-- Navbar -->
-  <header class="fixed w-full z-50 bg-transparent text-white">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <!-- Logo -->
-      <div class="text-2xl font-bold">Aman</div>
+    <div id="main" data-scroll-section class="content-wrapper">
+      <!-- HEADER -->
+      <header class="fixed w-full z-50 bg-transparent text-white">
+        <nav
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+        >
+          <!-- Logo -->
+          <div class="text-2xl font-bold">Aman</div>
 
-      <!-- Hamburger Menu (Mobile) -->
-      <div class="md:hidden">
-        <button id="menuToggle" class="focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+          <!-- Hamburger Menu (Mobile) -->
+          <div class="md:hidden">
+            <button id="menuToggle" class="focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
 
-      <!-- Menu Items -->
-      <div id="navMenu" class="hidden md:flex space-x-6 text-lg font-medium transition duration-300">
-        <a href="#home" class="hover:text-gray-300">Home</a>
-        <a href="#about" class="hover:text-gray-300">About</a>
-        <a href="#projects" class="hover:text-gray-300">Projects</a>
-        <a href="#contact" class="hover:text-gray-300">Contact</a>
-      </div>
-    </nav>
+          <!-- Menu Items -->
+          <div
+            id="navMenu"
+            class="hidden md:flex space-x-6 text-lg font-medium transition duration-300"
+          >
+            <a href="#home" class="hover:text-gray-300">Home</a>
+            <a href="#about" class="hover:text-gray-300">About</a>
+            <a href="#projects" class="hover:text-gray-300">Projects</a>
+            <a href="#contact" class="hover:text-gray-300">Contact</a>
+          </div>
+        </nav>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
-      <a href="#home" class="block py-2 hover:text-gray-300">Home</a>
-      <a href="#about" class="block py-2 hover:text-gray-300">About</a>
-      <a href="#projects" class="block py-2 hover:text-gray-300">Projects</a>
-      <a href="#contact" class="block py-2 hover:text-gray-300">Contact</a>
-    </div>
-  </header>
-
-  <!-- Required wrapper for Locomotive -->
-
-  <div id="main" data-scroll-container class="content-wrapper">
-    <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center text-white relative" data-scroll-section>
-      <div class="bg-overlay"></div>
-      <div class="relative z-10 text-center px-6" data-scroll data-scroll-speed="2">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4">Hi, I'm Aman</h1>
-        <p class="text-xl md:text-2xl">Frontend Developer & Designer</p>
-        <div class="mt-8" data-scroll data-scroll-speed="1">
-          <button
-            class="px-6 py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300">
-            View My Work
-          </button>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+          <a href="#home" class="block py-2 hover:text-gray-300">Home</a>
+          <a href="#about" class="block py-2 hover:text-gray-300">About</a>
+          <a href="#projects" class="block py-2 hover:text-gray-300"
+            >Projects</a
+          >
+          <a href="#contact" class="block py-2 hover:text-gray-300">Contact</a>
         </div>
-      </div>
-    </section>
-    <!-- About Section -->
+      </header>
 
-<section id="about" class="min-h-screen flex items-center justify-center px-6 py-20" data-scroll-section>
+      <!-- HERO -->
+      <section
+        class="h-screen flex items-center justify-center text-white relative"
+        data-scroll-section id="home"
+      >
+        <div class="bg-overlay"></div>
+        <div
+          class="relative z-10 text-center px-6"
+          data-scroll
+          data-scroll-speed="2"
+        >
+          <h1
+            class="text-5xl md:text-7xl font-bold mb-4 text-white"
+            id="heading"
+          >
+            Hi, I'm <span id="name"></span>
+          </h1>
+
+          <p class="text-xl md:text-2xl font-semibold video-text">
+            VIDEO EDITOR
+          </p>
+
+          <div class="mt-8" data-scroll data-scroll-speed="1" >
+            <button
+          class="scroll-to-work px-6 py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300 cursor-pointer"
+            >
+              View My Work
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section
+        id="about"
+        class="min-h-screen flex items-center justify-center px-6 py-20"
+        data-scroll-section
+      >
+        <div
+          class="max-w-4xl mx-auto w-full glass-morphism p-10 rounded-xl shadow-lg overflow-hidden relative"
+        >
+          <!-- Glass effect or background noise layer (optional) -->
+          <div
+            class="absolute inset-0 bg-noise opacity-5 pointer-events-none border-2 border-gray-200 rounded-xl"
+          ></div>
+
+          <!-- Content -->
+          <div class="about-content relative z-10">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-white underline decoration-pink-500 mb-6"
+              id="about-title"
+            >
+              About Me
+            </h2>
+            <p
+              class="text-lg md:text-xl leading-relaxed text-white font-sans"
+              id="about-text"
+              style="line-height: 1.8; font-family: 'Poppins', sans-serif"
+              data-scroll
+              data-scroll-speed="1"
+            >
+              Hi! I'm Aman. I’m a video editor who brings stories to life
+              through editing. I take raw footage and turn it into something
+              engaging, whether it’s for social media, YouTube, or anything in
+              between. I work with tools like Adobe Premiere Pro and Final Cut
+              Pro to make sure every video is polished and ready to wow the
+              audience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- app -->
+      <section
+        id="apps"
+        class="relative h-fit overflow-hidden bg-black text-white"
+        data-scroll-section
+      >
+        <div
+          class="max-w-4xl mx-auto w-full glass-morphism rounded-xl shadow-lg overflow-hidden relative"
+        >
+          <div class="text-center py-10">
+            <h2
+              class="text-white text-3xl md:text-4xl font-semibold flex items-center justify-center gap-3"
+            >
+              <span class="text-6xl md:text-7xl text-green-400 leading-none"
+                >“</span
+              >
+              <span class="whitespace-nowrap">What I Can Do for You</span>
+              <span class="text-6xl md:text-7xl text-green-400 leading-none"
+                >”</span
+              >
+            </h2>
+          </div>
+          <div
+            id="serviceScroller"
+            class="flex whitespace-nowrap gap-6 text-lg font-semibold tracking-wide"
+          >
+            <div class="service">Cash Cow Editing</div>
+            <div class="dot">•</div>
+            <div class="service">Reels Editing</div>
+            <div class="dot">•</div>
+            <div class="service">Logo Animation</div>
+            <div class="dot">•</div>
+            <div class="service">Podcast Edit</div>
+            <div class="dot">•</div>
+            <div class="service">Content Repurposing</div>
+            <div class="dot">•</div>
+            <div class="service">YT Shorts Edit</div>
+            <div class="dot">•</div>
+            <div class="service">Animated Text</div>
+            <!-- You can duplicate the content for seamless loop effect -->
+          </div>
+          <div class="overflow-hidden bg-black py-8">
+            <!-- <div class="flex" id="appScroller">
+    
+    <div class="app-box flex items-center justify-center gap-10 px-10">
+      <img src="assets/alightmotion.jpg" alt="App 1" class="h-10" />
+      <img src="assets/aftereffects.png" alt="App 2" class="h-10" />
+      <img src="assets/aftereffects.png" alt="App 3" class="h-10" />
+      <img src="assets/aftereffects.png" alt="App 4" class="h-10" />
+    </div>
+
+  
+  </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- video portfolio -->
+      <section class="py-20 overflow-hidden h-fit" data-scroll-section id="work">
+        <div class="bg-overlay"></div>
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-center text-white mb-16"
+            data-scroll
+            data-scroll-speed="1"
+          >
+            My <span class="text-blue-400">Video Portfolio</span>
+          </h2>
+
+          <!-- Swiper -->
+          <div
+            class="swiper simpleSwiper relative"
+            data-scroll
+            data-scroll-speed="2"
+          >
+            <div class="swiper-wrapper pb-12">
+              <!-- Slide 1 - Replace with your actual videos -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/DBksc9ZILau/?igsh=aTk0aHFwaTVuYzUw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View 'Never Gonna Give You Up' on Instagram"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                >
+                  <img
+                    src="https://a10.gaanacdn.com/gn_img/albums/Dk9KN2KBx1/k9KN112bBx/size_m_1713800456.webp"
+                    alt="Never Gonna Give You Up album cover"
+                    loading="lazy"
+                    width="400"
+                    height="430"
+                    class="thumbnail w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl"
+                  />
+
+                  <!-- Darker hover overlay -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <span
+                      class="text-white text-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-2"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                        />
+                      </svg>
+                      View Reel
+                    </span>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      Never Gonna Give You Up
+                    </h5>
+                    <p class="text-sm text-gray-200 mt-1">Reels edit</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/C-nfPlgNKlU/?igsh=MXFvMXRmNWV6djFmbA=="
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/laila.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+                  <!-- <video
+                    muted
+                    playsinline
+                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
+                    preload="metadata"
+                  >
+                    <source src="video/reel1.mp4" type="video/mp4" />
+                  </video> -->
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reels edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/C-PxNFYyubH/?igsh=bHR6cXU0YnZxcmJt"
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/srk.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+                  <!-- <video
+                    muted
+                    playsinline
+                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
+                    preload="metadata"
+                  >
+                    <source src="video/reel1.mp4" type="video/mp4" />
+                  </video> -->
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reel edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/DGdcCXPo0fZ/?igsh=MXZ2b2FjOTJxY2Rpcg=="
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/event.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reel edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div
+              class="swiper-button-prev text-blue-400 hover:text-white"
+            ></div>
+            <div
+              class="swiper-button-next text-blue-400 hover:text-white"
+            ></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-20 overflow-hidden h-fit items-center justify-center relative px-6 py-20"
+        data-scroll-section
+      >
         <div class="bg-overlay"></div>
 
-  <div class="max-w-4xl mx-auto w-full glass-morphism p-10 rounded-xl shadow-lg overflow-hidden  relative">
-    <!-- Glass morphism background noise effect -->
-    <div class="absolute inset-0 bg-noise opacity-5 pointer-events-none"></div>
-    
-    <!-- Animated content -->
-    <div class="about-content relative p-10 z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-white underline decoration-pink-500 mb-6 transform translate-y-10 ">
-        About Me
-      </h2>
-      <p class="text-lg md:text-xl leading-relaxed text-white transform translate-y-10  text-white/90">
-        Hi! I'm Aman. I'm passionate about building beautiful, interactive, and performant websites. I love working with modern web technologies and continuously strive to improve my skills while crafting elegant digital experiences.
-      </p>
-    </div>
-  </div>
-</section>
+        <div
+          class="glass-morphism container mx-auto px-6 h-full flex flex-col justify-center items-center"
+        >
+          <div
+            class="absolute inset-0 bg-noise opacity-5 pointer-events-none border-2 border-gray-200 rounded-xl"
+          ></div>
+          <h2
+            class="text-4xl md:text-6xl font-bold text-white mb-6 transform translate-y-10"
+          >
+            Follow Me
+          </h2>
+          <p class="text-sm text-white mb-12 transform translate-y-10">
+            Let's connect on social platforms!
+          </p>
 
+          <div
+            class="flex flex-wrap justify-center gap-8 transform translate-y-10"
+          >
+            <!-- Instagram -->
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon group w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-amber-500 flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+              <span class="sr-only">Instagram</span>
+            </a>
 
-<section id="toc" class="min-h-screen flex items-center justify-center text-white px-6 py-20" data-scroll-section>
-  <div class="bg-overlay"></div>
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/yourphonenumber"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon group w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-green-500/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                />
+              </svg>
+              <span class="sr-only">WhatsApp</span>
+            </a>
 
-  <div class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
-    
-    <!-- Left: Table of Contents (2/3 width) -->
-    <div class="bg-white/5 backdrop-blur-md p-10 rounded-2xl shadow-lg lg:col-span-2">
-      <h2 class="text-4xl md:text-5xl font-bold mb-8 relative inline-block">
-        <span class="relative z-10">Table of Contents</span>
-        <span class="absolute bottom-0 left-0 w-full h-1.5 bg-blue-500/70 rounded-full -z-0 transform origin-left scale-x-90 hover:scale-x-100 transition-transform duration-500"></span>
-      </h2>
-      <ul class="space-y-6 text-lg md:text-xl">
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🎬</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Intro Edits</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Engaging openers for YouTube or Reels</span>
-          </div>
-        </li>
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">✈️</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Travel Vlogs</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Dynamic and cinematic journey edits</span>
-          </div>
-        </li>
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🎥</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Cinematic Videos</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Color grading, storytelling, transitions</span>
-          </div>
-        </li>
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🔁</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Before & After</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Client transformation showcases</span>
-          </div>
-        </li>
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">📱</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Social Media Snippets</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Edits for Reels, TikToks, Shorts</span>
-          </div>
-        </li>
-        <li class="toc-item group flex items-start">
-          <span class="text-2xl mr-4 group-hover:scale-110 transition-transform">🏷️</span>
-          <div>
-            <strong class="text-blue-300 group-hover:text-blue-200 transition-colors">Client Projects</strong>
-            <span class="block text-white/70 group-hover:text-white/90">Branded content, promotional edits</span>
-          </div>
-        </li>
-      </ul>
-    </div>
+            <!-- LinkedIn -->
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon group w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
 
-    <!-- Right: Editing Apps (1/3 width) -->
-    <div class="editing-apps flex flex-col justify-center gap-6 p-8 bg-white/5 backdrop-blur-md rounded-2xl shadow-lg">
-      <h3 class="text-2xl font-semibold mb-4 text-center">Software I Use</h3>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fab fa-adobe text-2xl text-pink-400 mr-3"></i> 
-        <span class="text-lg">Adobe Premiere Pro</span>
-      </div>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fas fa-magic text-2xl text-purple-400 mr-3"></i> 
-        <span class="text-lg">After Effects</span>
-      </div>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fas fa-cut text-2xl text-green-400 mr-3"></i> 
-        <span class="text-lg">CapCut</span>
-      </div>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fas fa-video text-2xl text-blue-400 mr-3"></i> 
-        <span class="text-lg">VN Video Editor</span>
-      </div>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fas fa-film text-2xl text-yellow-400 mr-3"></i> 
-        <span class="text-lg">DaVinci Resolve</span>
-      </div>
-      <div class="app-card opacity-0 translate-y-12 transition duration-700 hover:bg-white/10 p-4 rounded-xl">
-        <i class="fas fa-clapperboard text-2xl text-red-400 mr-3"></i> 
-        <span class="text-lg">Final Cut Pro</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="py-20 bg-gradient-to-b from-gray-900 to-black overflow-hidden">
-  <div class="container mx-auto px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16">
-      My <span class="text-blue-400">Video Portfolio</span>
-    </h2>
-    
-    <!-- Swiper Container -->
-    <div class="swiper-container-coverflow relative">
-      <div class="swiper swiper-coverflow">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide group">
-            <div class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
-              <div class="aspect-w-16 aspect-h-9">
-                <video class="w-full h-full object-cover" poster="https://via.placeholder.com/800x450" muted loop>
-                  <source src="your-video-1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent  group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 class="text-xl font-bold text-white">Cinematic Travel Film</h3>
-                  <p class="text-blue-300">4K • Color Graded • Stabilized</p>
-                </div>
-              </div>
-            </div>
+            <!-- Email -->
+            <a
+              href="mailto:youremail@example.com"
+              class="social-icon group w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-red-500/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
+                />
+              </svg>
+              <span class="sr-only">Email</span>
+            </a>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="swiper-slide group">
-            <div class="relative rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
-              <div class="aspect-w-16 aspect-h-9">
-                <video class="w-full h-full object-cover" poster="https://via.placeholder.com/800x450" muted loop>
-                  <source src="your-video-2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent  group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <div>
-                  <h3 class="text-xl font-bold text-white">Product Commercial</h3>
-                  <p class="text-blue-300">Smooth Transitions • Sound Design</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Add more slides as needed -->
         </div>
-      </div>
-      
-      <!-- Navigation Buttons -->
-      <div class="swiper-button-prev text-blue-400 hover:text-white transition-colors"></div>
-      <div class="swiper-button-next text-blue-400 hover:text-white transition-colors"></div>
+
+        <!-- Decorative elements -->
+        <div
+          class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
+        >
+          <div
+            class="absolute top-20 left-10 w-32 h-32 rounded-full bg-purple-600/20 blur-xl"
+          ></div>
+          <div
+            class="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-blue-600/20 blur-xl"
+          ></div>
+        </div>
+      </section>
     </div>
-  </div>
-</section>
 
+    <!-- SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-
-
-
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <script src="script.js"></script>
-
-
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>
