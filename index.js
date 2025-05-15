@@ -1,3 +1,4 @@
+// ========== tsParticles ==========
 tsParticles.load("commonBg", {
   fullScreen: {
     enable: false,
@@ -99,14 +100,19 @@ ScrollTrigger.create({
   },
 });
 
-// animation for p video editor
-
+// ========== GSAP & Locomotive Setup ==========
 gsap.registerPlugin(ScrollTrigger);
 
 // Initialize Locomotive Scroll
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-section]"),
   smooth: true,
+  smartphone: {
+    smooth: true,
+  },
+  tablet: {
+    smooth: true,
+  },
 });
 
 // Sync ScrollTrigger with Locomotive
@@ -164,37 +170,19 @@ menuToggle.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
 
-// about section
-gsap.from("#about-title", {
-  scrollTrigger: {
-    trigger: "#about-title",
-    scroller: "[data-scroll-section]", // important when using LocomotiveScroll
-    start: "top 90%",
-    toggleActions: "play none none none",
-  },
-  y: 50,
-  opacity: 0,
-  duration: 1,
-  ease: "power4.out",
+//   cursor
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  gsap.to(cursor, {
+    x: e.clientX,
+    y: e.clientY,
+    duration: 0.2,
+    ease: "power2.out",
+  });
 });
 
-gsap.from("#about-text", {
-  scrollTrigger: {
-    trigger: "#about-text",
-    scroller: "[data-scroll-section]", // add this line
-    start: "top 90%",
-    toggleActions: "play none none none",
-  },
-  y: 50,
-  opacity: 0,
-  duration: 1.2,
-  delay: 0.2,
-  ease: "power4.out",
-});
-
-//  service app
-
-
+// service
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -214,159 +202,32 @@ gsap.to(serviceScroller, {
   repeat: -1,
 });
 
-
+// video
 // video
 
  document.addEventListener("DOMContentLoaded", () => {
-    const blocks = document.querySelectorAll(".swiper-slide");
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    blocks.forEach(block => {
-      const video = block.querySelector(".video-player");
-      const thumbnail = block.querySelector(".thumbnail");
-
-      if (!video || !thumbnail) return;
-
-      if (isMobile) {
-        // Play video automatically on mobile for 4 seconds
-        video.classList.add("opacity-100");
-        thumbnail.classList.add("opacity-0");
-        video.play();
-
-        setTimeout(() => {
-          video.pause();
-          video.currentTime = 0;
-          video.classList.remove("opacity-100");
-          thumbnail.classList.remove("opacity-0");
-        }, 4000); // You wrote 20000 (20s), which might be too long for preview
-      } else {
-        // Desktop hover behavior
-        let hoverTimeout;
-
-        block.addEventListener("mouseenter", () => {
-          clearTimeout(hoverTimeout);
-          video.classList.add("opacity-100");
-          thumbnail.classList.add("opacity-0");
-          video.play();
-
-          hoverTimeout = setTimeout(() => {
-            video.pause();
-            video.currentTime = 0;
-            video.classList.remove("opacity-100");
-            thumbnail.classList.remove("opacity-0");
-          }, 10000); // 10s preview
-        });
-
-        block.addEventListener("mouseleave", () => {
-          clearTimeout(hoverTimeout);
-          video.pause();
-          video.currentTime = 0;
-          video.classList.remove("opacity-100");
-          thumbnail.classList.remove("opacity-0");
-        });
-      }
-    });
-
-    // Initialize Swiper
-    new Swiper(".simpleSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
+      new Swiper(".simpleSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-        1024: {
-          slidesPerView: 3,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-      },
-    });
-  });
-
-// follow
-document.addEventListener('DOMContentLoaded', () => {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Create timeline for sequenced animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "section[data-scroll-section]",
-        start: "top 70%",
-        end: "bottom center",
-        scrub: 0.5,
-        markers: false // Set to true for debugging, false for production
-      }
-    });
-    
-    // Animation sequence
-    tl.from("h2", {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    })
-    .from("p", {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "back.out(1.7)"
-    }, "-=0.4")
-    .from(".contact-link", {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      stagger: 0.15,
-      ease: "elastic.out(1, 0.5)"
-    }, "-=0.3");
-    
-    // Optional hover animations
-    document.querySelectorAll('.contact-link').forEach(link => {
-      link.addEventListener('mouseenter', () => {
-        gsap.to(link, {
-          scale: 1.2,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      });
-      link.addEventListener('mouseleave', () => {
-        gsap.to(link, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
       });
     });
-  });
-
-//   cursor
-const cursor = document.querySelector('.custom-cursor');
-
-document.addEventListener('mousemove', (e) => {
-  gsap.to(cursor, {
-    x: e.clientX,
-    y: e.clientY,
-    duration: 0.2,
-    ease: 'power2.out'
-  });
-});
-
-// Scale on hover
-document.querySelectorAll('.hover-target').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    gsap.to(cursor, { scale: 2, backgroundColor: "#ff4081", duration: 0.3 });
-  });
-  el.addEventListener('mouseleave', () => {
-    gsap.to(cursor, { scale: 1, backgroundColor: "transparent", duration: 0.3 });
-  });
-});
-
-// smoth scrool

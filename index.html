@@ -10,9 +10,8 @@
     />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -29,7 +28,7 @@
   </head>
 
   <body class="smooth-scroll" data-scroll-container>
-     <div class="custom-cursor"></div>
+    <div class="custom-cursor hidden lg:flex"></div>
     <div class="common-bg" id="commonBg"></div>
 
     <div id="main" data-scroll-section class="content-wrapper">
@@ -39,7 +38,7 @@
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
         >
           <!-- Logo -->
-          <div class="text-2xl font-bold">Aman</div>
+          <div class="text-2xl font-bold caveat-Font">Aman</div>
 
           <!-- Hamburger Menu (Mobile) -->
           <div class="md:hidden">
@@ -87,7 +86,8 @@
       <!-- HERO -->
       <section
         class="h-screen flex items-center justify-center text-white relative"
-        data-scroll-section id="home"
+        data-scroll-section
+        id="home"
       >
         <div class="bg-overlay"></div>
         <div
@@ -102,13 +102,13 @@
             Hi, I'm <span id="name"></span>
           </h1>
 
-          <p class="text-xl md:text-2xl font-semibold video-text">
+          <p class="text-xl md:text-2xl font-semibold video-text caveat-font">
             VIDEO EDITOR
           </p>
 
-          <div class="mt-8" data-scroll data-scroll-speed="1" >
+          <div class="mt-8" data-scroll data-scroll-speed="1">
             <button
-          class="scroll-to-work px-6 py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300 cursor-pointer"
+              class="scroll-to-work px-6 py-3 bg-transparent border-2 border-white rounded-full hover:bg-white hover:text-black transition duration-300 cursor-pointer"
             >
               View My Work
             </button>
@@ -123,35 +123,80 @@
         data-scroll-section
       >
         <div
-          class="max-w-4xl mx-auto w-full glass-morphism p-10 rounded-xl shadow-lg overflow-hidden relative"
+          class="max-w-5xl w-full glass-morphism p-10 rounded-xl shadow-lg relative overflow-hidden"
         >
-          <!-- Glass effect or background noise layer (optional) -->
+          <!-- Optional noise layer -->
           <div
-            class="absolute inset-0 bg-noise opacity-5 pointer-events-none border-2 border-gray-200 rounded-xl"
+            class="absolute inset-0 bg-noise opacity-5 pointer-events-none border border-gray-300 rounded-xl"
           ></div>
 
-          <!-- Content -->
-          <div class="about-content relative z-10">
+          <div class="relative z-10 space-y-10">
+            <!-- Title -->
             <h2
-              class="text-4xl md:text-5xl font-bold text-white underline decoration-pink-500 mb-6"
+              class="text-4xl md:text-5xl text-white relative inline-block group caveat-Font"
               id="about-title"
             >
               About Me
+              <span
+                class="absolute left-0 -bottom-1 w-0 h-1 bg-pink-500 transition-all duration-500 group-hover:w-full"
+              ></span>
             </h2>
-            <p
-              class="text-lg md:text-xl leading-relaxed text-white font-sans"
-              id="about-text"
-              style="line-height: 1.8; font-family: 'Poppins', sans-serif"
-              data-scroll
-              data-scroll-speed="1"
-            >
-              Hi! I'm Aman. I’m a video editor who brings stories to life
-              through editing. I take raw footage and turn it into something
-              engaging, whether it’s for social media, YouTube, or anything in
-              between. I work with tools like Adobe Premiere Pro and Final Cut
-              Pro to make sure every video is polished and ready to wow the
-              audience.
-            </p>
+
+            <!-- Section 1: Accounting -->
+            <div class="space-y-3" data-scroll data-scroll-speed="1">
+              <h3 class="text-xl font-semibold text-pink-400">
+                👨‍💼 Junior Accountant
+              </h3>
+              <p
+                class="text-white text-base md:text-lg leading-relaxed font-sans"
+                style="font-family: 'Poppins', sans-serif"
+              >
+                I’m Aman Gaud, currently working at A.C. Jhaveri & Associates.
+                My role involves assisting with bookkeeping, tax filing, and
+                financial reporting. I’m known for being detail-oriented,
+                organized, and dependable when it comes to managing financial
+                data and ensuring compliance.
+              </p>
+            </div>
+
+            <!-- Section 2: Video Editing -->
+            <div class="space-y-3" data-scroll data-scroll-speed="1">
+              <h3 class="text-xl font-semibold text-pink-400">
+                🎬 Passionate Video Editor
+              </h3>
+              <p
+                class="text-white text-base md:text-lg leading-relaxed font-sans"
+              >
+                In addition to my accounting career, I enjoy video editing and
+                storytelling. I’ve worked on Instagram Reels, YouTube Shorts,
+                and full-length videos using both mobile and desktop tools.
+              </p>
+              <ul class="list-disc list-inside text-sm text-gray-300">
+                <li>
+                  <strong>Mobile Apps:</strong> CapCut, VN Video Editor, InShot,
+                  Alight Motion
+                </li>
+                <li>
+                  <strong>Desktop Tools:</strong> Adobe Premiere Pro, DaVinci
+                  Resolve, Filmora
+                </li>
+              </ul>
+            </div>
+
+            <!-- Section 3: Personal Insight -->
+            <div class="space-y-3" data-scroll data-scroll-speed="1">
+              <h3 class="text-xl font-semibold text-pink-400">
+                🔁 A Balanced Mindset
+              </h3>
+              <p
+                class="text-white text-base md:text-lg leading-relaxed font-sans"
+              >
+                My unique blend of analytical and creative skills keeps me
+                engaged and growing in both fields. Whether I’m reconciling
+                financials or refining a video timeline, I’m always learning and
+                improving.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -159,62 +204,230 @@
       <!-- app -->
       <section
         id="apps"
-        class="relative h-fit overflow-hidden bg-black text-white"
+        class="relative h-3/4 lg:9/10 overflow-hidden text-white"
         data-scroll-section
       >
         <div
-          class="max-w-4xl mx-auto w-full glass-morphism rounded-xl shadow-lg overflow-hidden relative"
+          class="max-w-4xl mx-auto w-full bg-black rounded-2xl glass-morphism rounded-xl shadow-lg overflow-hidden relative"
         >
+          <!-- Title Section -->
           <div class="text-center py-10">
             <h2
-              class="text-white text-3xl md:text-4xl font-semibold flex items-center justify-center gap-3"
+              class="text-white text-xl md:text-4xl font-semibold flex items-center justify-center gap-3"
             >
-              <span class="text-6xl md:text-7xl text-green-400 leading-none"
+              <span
+                class="text-6xl md:text-7xl text-green-400 leading-none"
+                data-scroll
+                data-scroll-speed="-0.5"
+                data-scroll-direction="horizontal"
                 >“</span
               >
               <span class="whitespace-nowrap">What I Can Do for You</span>
-              <span class="text-6xl md:text-7xl text-green-400 leading-none"
+              <span
+                class="text-6xl md:text-7xl text-green-400 leading-none"
+                data-scroll
+                data-scroll-speed="0.5"
+                data-scroll-direction="horizontal"
                 >”</span
               >
             </h2>
           </div>
-          <div
-            id="serviceScroller"
-            class="flex whitespace-nowrap gap-6 text-lg font-semibold tracking-wide"
-          >
-            <div class="service">Cash Cow Editing</div>
-            <div class="dot">•</div>
-            <div class="service">Reels Editing</div>
-            <div class="dot">•</div>
-            <div class="service">Logo Animation</div>
-            <div class="dot">•</div>
-            <div class="service">Podcast Edit</div>
-            <div class="dot">•</div>
-            <div class="service">Content Repurposing</div>
-            <div class="dot">•</div>
-            <div class="service">YT Shorts Edit</div>
-            <div class="dot">•</div>
-            <div class="service">Animated Text</div>
-            <!-- You can duplicate the content for seamless loop effect -->
-          </div>
-          <div class="overflow-hidden bg-black py-8">
-            <!-- <div class="flex" id="appScroller">
-    
-    <div class="app-box flex items-center justify-center gap-10 px-10">
-      <img src="assets/alightmotion.jpg" alt="App 1" class="h-10" />
-      <img src="assets/aftereffects.png" alt="App 2" class="h-10" />
-      <img src="assets/aftereffects.png" alt="App 3" class="h-10" />
-      <img src="assets/aftereffects.png" alt="App 4" class="h-10" />
-    </div>
 
-  
-  </div> -->
+          <!-- Fixed Services Text Row -->
+          <div
+            class="text-center py-4 border-b border-gray-700 px-4"
+            data-scroll
+            data-scroll-speed="1"
+          >
+            <div
+              class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-sm sm:text-base font-semibold tracking-wide"
+            >
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Cash Cow Editing
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Reels Editing
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Logo Animation
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Podcast Edit
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Content Repurposing
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                YT Shorts Edit
+              </div>
+              <div class="dot hidden sm:inline">•</div>
+
+              <div
+                class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
+              >
+                Animated Text
+              </div>
+            </div>
+          </div>
+
+          <!-- Infinite App Logo Scroller -->
+          <div class="overflow-hidden bg-black py-6 sm:py-8">
+            <div class="relative w-full" data-scroll data-scroll-speed="1">
+              <div class="flex gap-6 sm:gap-10 px-4 sm:px-10 animate-scroll">
+                <!-- Logo Items -->
+                <img
+                  src="assets/lightroom.jpg"
+                  alt="Alight Motion"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/dv.jpg"
+                  alt="After Effects"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/picsart.jpg"
+                  alt="Premiere Pro"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ae.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/canva.jpg"
+                  alt="Canva"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
+                />
+
+                <img
+                  src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ps.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/lightroom.jpg"
+                  alt="Alight Motion"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/dv.jpg"
+                  alt="After Effects"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/picsart.jpg"
+                  alt="Premiere Pro"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ae.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/canva.jpg"
+                  alt="Canva"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
+                />
+
+                <img
+                  src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ps.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/lightroom.jpg"
+                  alt="Alight Motion"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/dv.jpg"
+                  alt="After Effects"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/picsart.jpg"
+                  alt="Premiere Pro"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ae.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/canva.jpg"
+                  alt="Canva"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
+                />
+
+                <img
+                  src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ps.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/lightroom.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <!-- Repeat as needed -->
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- video portfolio -->
-      <section class="py-20 overflow-hidden h-fit" data-scroll-section id="work">
+      <section
+        class="py-20 overflow-hidden h-fit"
+        data-scroll-section
+        id="work"
+      >
         <div class="bg-overlay"></div>
         <div class="container mx-auto px-4">
           <h2
@@ -299,14 +512,7 @@
                     alt="Never Gonna Give You Up"
                     class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
                   />
-                  <!-- <video
-                    muted
-                    playsinline
-                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
-                    preload="metadata"
-                  >
-                    <source src="video/reel1.mp4" type="video/mp4" />
-                  </video> -->
+
                   <div
                     class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
                   >
@@ -331,14 +537,7 @@
                     alt="Never Gonna Give You Up"
                     class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
                   />
-                  <!-- <video
-                    muted
-                    playsinline
-                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
-                    preload="metadata"
-                  >
-                    <source src="video/reel1.mp4" type="video/mp4" />
-                  </video> -->
+
                   <div
                     class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
                   >
@@ -509,6 +708,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Your script with the Swiper initialization -->
 
     <script src="index.js"></script>
   </body>
