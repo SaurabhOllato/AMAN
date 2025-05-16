@@ -202,32 +202,111 @@ gsap.to(serviceScroller, {
   repeat: -1,
 });
 
-// video
+
 // video
 
  document.addEventListener("DOMContentLoaded", () => {
-      new Swiper(".simpleSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        },
-      });
+    const blocks = document.querySelectorAll(".swiper-slide");
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    blocks.forEach(block => {
+      const video = block.querySelector(".video-player");
+      const thumbnail = block.querySelector(".thumbnail");
+
+      if (!video || !thumbnail) return;
+
+      if (isMobile) {
+        // Play video automatically on mobile for 4 seconds
+        video.classList.add("opacity-100");
+        thumbnail.classList.add("opacity-0");
+        video.play();
+
+        setTimeout(() => {
+          video.pause();
+          video.currentTime = 0;
+          video.classList.remove("opacity-100");
+          thumbnail.classList.remove("opacity-0");
+        }, 4000); // You wrote 20000 (20s), which might be too long for preview
+      } else {
+        // Desktop hover behavior
+        let hoverTimeout;
+
+        block.addEventListener("mouseenter", () => {
+          clearTimeout(hoverTimeout);
+          video.classList.add("opacity-100");
+          thumbnail.classList.add("opacity-0");
+          video.play();
+
+          hoverTimeout = setTimeout(() => {
+            video.pause();
+            video.currentTime = 0;
+            video.classList.remove("opacity-100");
+            thumbnail.classList.remove("opacity-0");
+          }, 10000); // 10s preview
+        });
+
+        block.addEventListener("mouseleave", () => {
+          clearTimeout(hoverTimeout);
+          video.pause();
+          video.currentTime = 0;
+          video.classList.remove("opacity-100");
+          thumbnail.classList.remove("opacity-0");
+        });
+      }
     });
+
+    // Initialize Swiper
+    new Swiper(".simpleSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+  const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true,
+  lerp: 0.1,
+  tablet: { smooth: true },
+  smartphone: { smooth: true },
+  // Exclude swiper from locomotive effects
+  ignore: ['.swiper'],
+});
+
+const track = document.querySelector('.carousel-track');
+  const items = document.querySelectorAll('.carousel-item');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  let index = 0;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % items.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + items.length) % items.length;
+    updateCarousel();
+  });
+
+  
