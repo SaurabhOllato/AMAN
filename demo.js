@@ -1708,3 +1708,140 @@ const scroll = new LocomotiveScroll({
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+ <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    <div class="hover-overlay-dark">
+                      <span class="hover-overlay-text">
+                        <i class="fab fa-instagram mr-2 text-lg"></i>
+                        View Reel
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="hover-title absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      Mausam
+                    </h5>
+                    <p class="text-sm text-gray-200 mt-1">Catchy reels edits</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/C-nfPlgNKlU/?igsh=MXFvMXRmNWV6djFmbA=="
+                  target="_blank"
+                  class="hover-overlay-container block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/laila.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+                  <!-- <video
+                    muted
+                    playsinline
+                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
+                    preload="metadata"
+                  >
+                    <source src="video/reel1.mp4" type="video/mp4" />
+                  </video> -->
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reels edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/C-PxNFYyubH/?igsh=bHR6cXU0YnZxcmJt"
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/srk.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+                  <!-- <video
+                    muted
+                    playsinline
+                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
+                    preload="metadata"
+                  >
+                    <source src="video/reel1.mp4" type="video/mp4" />
+                  </video> -->
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reel edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+              <!-- slide 4 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://www.instagram.com/reel/DGdcCXPo0fZ/?igsh=MXZ2b2FjOTJxY2Rpcg=="
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/event.png"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reel edits
+                    </h5>
+                  </div>
+                </a>
+              </div>
+              <!-- slide 5 -->
+              <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              >
+                <a
+                  href="https://youtu.be/DyyOVRhAlpM?si=9r6QJJwOXf8pkKQZ"
+                  target="_blank"
+                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                >
+                  <img
+                    src="assets/cafe1947.jpg"
+                    alt="Never Gonna Give You Up"
+                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                  />
+
+                  <div
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-Font font-semibold text-lg">
+                      Reel edits
+                    </h5>
+                  </div>
+                </a>
+              </div>

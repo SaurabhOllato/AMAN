@@ -91,7 +91,7 @@
               class="nav-link text-gray-300 hover:text-white"
               data-scroll-target="#home"
             >
-              Homeiee
+              Home
             </a>
 
             <a
@@ -135,6 +135,8 @@
           <a
             href="#"
             class="showreel relative inline-block px-6 py-3 mt-10 border-2 border-white rounded-full text-white hover:text-black hover:bg-white transition duration-300 overflow-hidden"
+            data-scroll
+            data-scroll-speed="1"
           >
             <span class="relative z-10">Video Showcase</span>
             <span class="sparkle"></span>
@@ -148,32 +150,7 @@
         </a>
       </section>
 
-      <!-- SVG White Wave Divider -->
-      <!-- <section data-scroll-section class="relative min-h-screen bg-black">
-       
-        <div
-          class="sticky-svg absolute top-0 left-0 w-full flex justify-center"
-          data-scroll
-          data-scroll-sticky
-          data-scroll-target="#sticky-target"
-        >
-          <svg class="w-32 h-32 mt-10" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="40" stroke="white" stroke-width="10" />
-          </svg>
-        </div>
-
-        <div
-          id="sticky-target"
-          class="h-[200vh] bg-gradient-to-b from-black to-gray-800"
-        >
-          <div
-            class="h-screen flex items-center justify-center text-white text-2xl"
-          >
-            Scroll to see the sticky SVG
-          </div>
-          <div class="h-screen"></div>
-        </div>
-      </section> -->
+     
 
       <!-- ABOUT -->
       <section
@@ -318,7 +295,7 @@
             data-scroll-speed="1"
           >
             <div
-              class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-sm sm:text-base font-semibold tracking-wide"
+              class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 text-sm sm:text-base font-semibold tracking-wide mb-10"
             >
               <div
                 class="service transition transform hover:scale-105 hover:text-pink-400 duration-300"
@@ -401,35 +378,9 @@
                 />
 
                 <img
-                  src="assets/filmora.jpg"
-                  alt="Final Cut"
-                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
-                />
-                <img
-                  src="assets/ps.jpg"
+                  src="assets/light.jpg"
                   alt="Final Cut"
                   class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
-                />
-
-                <img
-                  src="assets/dv.jpg"
-                  alt="After Effects"
-                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
-                />
-                <img
-                  src="assets/picsart.jpg"
-                  alt="Premiere Pro"
-                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
-                />
-                <img
-                  src="assets/ae.jpg"
-                  alt="Final Cut"
-                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
-                />
-                <img
-                  src="assets/canva.jpg"
-                  alt="Canva"
-                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
                 />
 
                 <img
@@ -463,6 +414,47 @@
                   alt="Canva"
                   class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
                 />
+                <img
+                  src="assets/light.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/ps.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+
+                <img
+                  src="assets/dv.jpg"
+                  alt="After Effects"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/picsart.jpg"
+                  alt="Premiere Pro"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/light.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/ae.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition"
+                />
+                <img
+                  src="assets/canva.jpg"
+                  alt="Canva"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full relative shine-effect"
+                />
 
                 <img
                   src="assets/filmora.jpg"
@@ -477,6 +469,11 @@
 
                 <img
                   src="assets/filmora.jpg"
+                  alt="Final Cut"
+                  class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
+                />
+                <img
+                  src="assets/light.jpg"
                   alt="Final Cut"
                   class="h-8 sm:h-10 opacity-80 hover:opacity-100 transition rounded-full"
                 />
@@ -555,114 +552,179 @@
               </div>
 
               <!-- Slide 2 -->
-              <div
-                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+             <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[300px] mx-auto"
               >
                 <a
                   href="https://www.instagram.com/reel/C-nfPlgNKlU/?igsh=MXFvMXRmNWV6djFmbA=="
                   target="_blank"
-                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                  rel="noopener noreferrer"
+                  aria-label="View 'Never Gonna Give You Up' on Instagram"
+                  class="hover-overlay-container block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 >
                   <img
                     src="assets/laila.jpg"
-                    alt="Never Gonna Give You Up"
-                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                    alt="Never Gonna Give You Up album cover"
+                    loading="lazy"
+                    width="400"
+                    height="430"
+                    class="hover-overlay-image w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl"
                   />
-                  <!-- <video
-                    muted
-                    playsinline
-                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
-                    preload="metadata"
-                  >
-                    <source src="video/reel1.mp4" type="video/mp4" />
-                  </video> -->
+
+                  <!-- Darker hover overlay -->
                   <div
-                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
-                    <h5 class="caveat-Font font-semibold text-lg">
-                      Reels edits
+                    <div class="hover-overlay-dark">
+                      <span class="hover-overlay-text">
+                        <i class="fab fa-instagram mr-2 text-lg"></i>
+                        View Reel
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="hover-title absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      Laila Majnu
                     </h5>
+                    <p class="text-sm text-gray-200 mt-1">Catchy reels edits</p>
                   </div>
                 </a>
               </div>
 
               <!-- Slide 3 -->
               <div
-                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[300px] mx-auto"
               >
                 <a
                   href="https://www.instagram.com/reel/C-PxNFYyubH/?igsh=bHR6cXU0YnZxcmJt"
                   target="_blank"
-                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                  rel="noopener noreferrer"
+                  aria-label="View 'Never Gonna Give You Up' on Instagram"
+                  class="hover-overlay-container block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 >
                   <img
                     src="assets/srk.jpg"
-                    alt="Never Gonna Give You Up"
-                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                    alt="Never Gonna Give You Up album cover"
+                    loading="lazy"
+                    width="400"
+                    height="430"
+                    class="hover-overlay-image w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl"
                   />
-                  <!-- <video
-                    muted
-                    playsinline
-                    class="video-player absolute top-0 left-0 w-full h-full object-cover rounded-2xl opacity-0 transition-opacity duration-300"
-                    preload="metadata"
-                  >
-                    <source src="video/reel1.mp4" type="video/mp4" />
-                  </video> -->
+
+                  <!-- Darker hover overlay -->
                   <div
-                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
-                    <h5 class="caveat-Font font-semibold text-lg">
-                      Reel edits
+                    <div class="hover-overlay-dark">
+                      <span class="hover-overlay-text">
+                        <i class="fab fa-instagram mr-2 text-lg"></i>
+                        View Reel
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="hover-title absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      SRK Edits
                     </h5>
+                    <p class="text-sm text-gray-200 mt-1">Catchy reels edits</p>
                   </div>
                 </a>
               </div>
+              <!-- slide 4 -->
               <div
-                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[300px] mx-auto"
               >
                 <a
                   href="https://www.instagram.com/reel/DGdcCXPo0fZ/?igsh=MXZ2b2FjOTJxY2Rpcg=="
                   target="_blank"
-                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                  rel="noopener noreferrer"
+                  aria-label="View 'Never Gonna Give You Up' on Instagram"
+                  class="hover-overlay-container block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 >
                   <img
                     src="assets/event.png"
-                    alt="Never Gonna Give You Up"
-                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                    alt="Never Gonna Give You Up album cover"
+                    loading="lazy"
+                    width="400"
+                    height="430"
+                    class="hover-overlay-image w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl"
                   />
 
+                  <!-- Darker hover overlay -->
                   <div
-                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
-                    <h5 class="caveat-Font font-semibold text-lg">
-                      Reel edits
+                    <div class="hover-overlay-dark">
+                      <span class="hover-overlay-text">
+                        <i class="fab fa-instagram mr-2 text-lg"></i>
+                        View Reel
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="hover-title absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      Event
                     </h5>
+                    <p class="text-sm text-gray-200 mt-1">College Event Fest</p>
                   </div>
                 </a>
               </div>
-              <div
-                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[430px] mx-auto"
+              <!-- slide 5 -->
+             <div
+                class="swiper-slide w-[100px] h-[300px] lg:w-[400px] lg:h-[300px] mx-auto"
               >
                 <a
                   href="https://youtu.be/DyyOVRhAlpM?si=9r6QJJwOXf8pkKQZ"
                   target="_blank"
-                  class="block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300"
+                  rel="noopener noreferrer"
+                  aria-label="View 'Never Gonna Give You Up' on Instagram"
+                  class="hover-overlay-container block w-full h-full rounded-2xl shadow-xl overflow-hidden group relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 >
                   <img
                     src="assets/cafe1947.jpg"
-                    alt="Never Gonna Give You Up"
-                    class="thumbnail w-full h-[115%] object-cover transition-opacity duration-300 rounded-2xl"
+                    alt="Never Gonna Give You Up album cover"
+                    loading="lazy"
+                    width="400"
+                    height="430"
+                    class="hover-overlay-image w-full h-full object-cover transition-all duration-500 group-hover:scale-105 rounded-2xl"
                   />
 
+                  <!-- Darker hover overlay -->
                   <div
-                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
-                    <h5 class="caveat-Font font-semibold text-lg">
-                      Reel edits
+                    <div class="hover-overlay-dark">
+                      <span class="hover-overlay-text">
+                        <i class="fab fa-youtube mr-2 text-lg"></i>
+                        View on Youtube
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Title section -->
+                  <div
+                    class="hover-title absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent"
+                  >
+                    <h5 class="caveat-font font-bold text-xl text-white">
+                      Cafe 1947
                     </h5>
+                    <p class="text-sm text-gray-200 mt-1">Catchy reels edits</p>
                   </div>
                 </a>
               </div>
+
             </div>
 
             <!-- Navigation -->
@@ -714,14 +776,11 @@
 
       <!-- Contact -->
       <section
-        class="bg-black text-white py-24 lg:py-28 px-8 h-fit md:px-20 px-6 "
+        class="bg-black text-white py-24 lg:py-28 px-8 h-fit md:px-20 px-6"
         id="contact"
         data-scroll-section
       >
-        <div
-          class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12"
-          
-        >
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
           <!-- Left Side: Text & Info -->
           <div>
             <h2 class="text-4xl md:text-5xl font-bold mb-6">
@@ -787,10 +846,12 @@
 
         <!-- Divider -->
         <div
-          class="border-t border-gray-600 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 "
+          class="border-t border-gray-600 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
         >
           <p>© 2025 Video Editor | Making videos cooler since... now 😎</p>
-          <div class="flex gap-4 mt-4 md:mt-0 text-white text-xs md:text-lg hidden md:flex">
+          <div
+            class="flex gap-4 mt-4 md:mt-0 text-white text-xs md:text-lg hidden md:flex"
+          >
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a
