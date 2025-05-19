@@ -115,39 +115,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // EMAIL
-   const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
 
-    if (form) {
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
-        const formData = new FormData(form);
+      const formData = new FormData(form);
 
-        try {
-          const response = await fetch("https://formspree.io/f/mwpooaje", {
-            method: "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json",
-            },
-          });
+      try {
+        const response = await fetch("https://formspree.io/f/xzzrwzpw", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
 
-          if (response.ok) {
-            status.textContent = "Message sent successfully!";
-            status.classList.remove("hidden", "text-red-400");
-            status.classList.add("text-lime-300");
-            form.reset();
-          } else {
-            throw new Error("Submission failed");
-          }
-        } catch (error) {
-          status.textContent = "Oops! Something went wrong.";
-          status.classList.remove("hidden", "text-lime-300");
-          status.classList.add("text-red-400");
+        if (response.ok) {
+          status.textContent = "Message sent successfully!";
+          status.classList.remove("hidden", "text-red-400");
+          status.classList.add("text-lime-300");
+          form.reset();
+        } else {
+          throw new Error("Submission failed");
         }
-      });
-    }
+      } catch (error) {
+        status.textContent = "Oops! Something went wrong.";
+        status.classList.remove("hidden", "text-lime-300");
+        status.classList.add("text-red-400");
+      }
+    });
+  }
 
   // Add smooth scroll trigger for the .showreel button
   const showreelBtn = document.querySelector(".showreel");
@@ -163,16 +163,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // navbar
   const navLinks = document.querySelectorAll("[data-scroll-target]");
 
-navLinks.forEach(link => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetSelector = link.getAttribute("data-scroll-target");
-    const target = document.querySelector(targetSelector);
-    if (target) {
-      scroll.scrollTo(target); // Locomotive Scroll
-    }
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetSelector = link.getAttribute("data-scroll-target");
+      const target = document.querySelector(targetSelector);
+      if (target) {
+        scroll.scrollTo(target); // Locomotive Scroll
+      }
+    });
   });
-});
   // Wait for Locomotive to finish its setup
   setTimeout(() => {
     // Initialize Swiper after Locomotive
@@ -356,7 +356,3 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
-
-
-
-
