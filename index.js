@@ -99,6 +99,30 @@ ScrollTrigger.create({
     }, 200);
   },
 });
+// window.addEventListener("load", () => {
+//   document.body.style.overflow = "hidden"; // Prevent scroll during loader
+
+//   setTimeout(() => {
+//     const loader = document.getElementById("loader");
+//     const main = document.getElementById("main");
+
+//     if (loader && main) {
+//       loader.classList.add("fade-out");
+
+//       loader.addEventListener(
+//         "transitionend",
+//         () => {
+//           loader.remove(); // This is KEY: remove loader completely
+//           main.style.display = "block";
+//           document.body.style.overflow = "auto";
+//           window.scrollTo(0, 0);
+//         },
+//         { once: true }
+//       );
+//     }
+//     console.log("Scroll position after loader:", window.scrollY);
+//   }, 3000); // Adjust delay as needed
+// });
 
 // ========== GSAP & Locomotive Setup ==========
 document.addEventListener("DOMContentLoaded", () => {
@@ -372,20 +396,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //     }, 500); // after fade
 //   }, 3000); // wait 3s
 // });
-
-
-window.addEventListener("load", function () {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    const main = document.getElementById("main");
-
-    loader.classList.add("fade-out");
-
-    setTimeout(() => {
-      loader.style.display = "none";
-      main.style.display = "block";
-      document.body.style.overflow = "auto";
-    }, 500);
-  }, 3000);
-});
-
