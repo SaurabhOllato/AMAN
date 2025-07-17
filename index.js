@@ -356,3 +356,36 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+// loader
+// window.addEventListener("load", function () {
+//   setTimeout(() => {
+//     const loader = document.getElementById("loader");
+//     const main = document.getElementById("main");
+
+//     loader.classList.add("fade-out");
+
+//     setTimeout(() => {
+//       loader.style.display = "none";
+//       main.style.display = "block";
+//       document.body.style.overflow = "auto"; // re-enable scroll
+//     }, 500); // after fade
+//   }, 3000); // wait 3s
+// });
+
+
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    const main = document.getElementById("main");
+
+    loader.classList.add("fade-out");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      main.style.display = "block";
+      document.body.style.overflow = "auto";
+    }, 500);
+  }, 3000);
+});
+
